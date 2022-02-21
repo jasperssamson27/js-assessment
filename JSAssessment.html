@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"> 
+
+<head>
+
+	<meta charset="utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Form Example</title>
+
+	<style>
+		body{
+			background-color:#ccc;
+		}
+		#content{
+			margin:30px;
+			background-color: #fff;
+			padding:20px 15px;
+			border:1px solid #999;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#question3").replaceWith('<select name="txtQuantity" id="txtQuantity">' +
+		        '<option value="Star Wars">Star Wars</option>' +
+		        '<option value="Lord of the Rings">Lord of the Rings</option>' +
+		        '<option value="Harry Potter">Harry Potter</option>' +
+		        '<option value="Hunger Games">Hunger Games</option>' +
+		        '</select>'
+		    );
+			$("button").click(function(){
+				let x = document.getElementById("question1").value;
+				let y = document.getElementById("question2").value;
+				let z = document.getElementById("question4").value;
+
+
+				if (x == null || x == "") {
+					alert("Question 1 must be filled out.");
+					return false;
+				}
+
+				else if (y == null || y == "") {
+					alert("Question 2 must be filled out.");
+					return false;
+				}
+
+				else if (z == null || z == "") {
+					alert("Question 4 must be filled out.");
+					return false;
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="content">
+		<h1>Welcome to the jQuery assessment</h1>
+		<p> We use jQuery to validate that form fields have been filed in. We also use it to “replace” a text field with a drop down of pre-defined choices. </p>
+		<p>For this assessment, add jQuery to validate that the first 2 questions have answers when the submit button is pressed. If not, provide an error message.</p> 
+		<p>In addition, please use jQuery to “replace” the input box on question 3 with a drop down containing these 4 possible answers:
+			<ul>
+				<li>Star Wars</li>
+				<li>Lord of the Rings</li>
+				<li>Harry Potter</li>
+				<li>Hunger Games</li>
+			</ul>
+		</p>
+
+		<h2>These are a few of my favorite things....</h2>
+		<form name="myForm" action="ThankYou.html">
+		  Favorite Song:   <input type="text" name="question1" id="question1"><br/><br/>
+		  Favorite Color:   <input type="text" name="question2" id="question2"><br/><br/>
+		  Favorite Movie:   <input type="text" name="question3" id="question3" class="question3"><br/><br/>
+		  Favorite Food:   <input type="text" name="question4" id="question4"><br/><br/>
+		  <button id="btn">Submit</button>
+		</form>
+	</div>
+</body>
+
+</html>
